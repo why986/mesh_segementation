@@ -27,6 +27,7 @@ class MeshSolver():
         self.weight_delta = args.weight_delta
         self.stop_eps = args.stop_eps
         self.MAX_NUM_SEEDS = 10
+        self.mesh.show()
 
         self.color_cnt = 0
         self.color = {}
@@ -235,9 +236,9 @@ class MeshSolver():
         color_begin = self.color_cnt
         fuzzy_faces = self.k_way_segmentation(seeds, dis, faces)
         self.elimate_fuzzy_parts(seeds, ang_dist_mat, fuzzy_faces, faces)
-        for i in range(color_begin, self.color_cnt):
-            faces_sub = self.build_sub_graph(faces, i)
-            self.solve(faces_sub, dis, ang_dist_mat)
+        # for i in range(color_begin, self.color_cnt):
+        #     faces_sub = self.build_sub_graph(faces, i)
+        #     self.solve(faces_sub, dis, ang_dist_mat)
 
 
 
